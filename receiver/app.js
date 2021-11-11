@@ -2,12 +2,12 @@ const app = require("express")();
 const seneca = require("seneca");
 const message = '';
 
-seneca({ log: 'silent' }).add({ callS2: 1 }, function(msg, reply) {
+seneca({ log: 'silent' }).add({ callS2: 1 }, (msg, reply) => {
     reply({ y: msg.y })
     console.log(msg.y);
-}).listen(4003);
+}).listen(process.env.PUBLISHER_PORT);
 
-app.get("/", function(request, response) {
+app.get("/", (request, response) => {
     response.send("<h2>message:" + "kekw" + "</h2>");
 });
 
