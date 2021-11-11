@@ -1,0 +1,18 @@
+version: '3'
+services:
+  publisher:
+    container_name: publisher-app
+    image: latest/publisher
+    restart: always 
+    build: . 
+    ports: 
+      - "4001:3001"
+  receiver:
+    container_name: receiver-app
+    image: latest/receiver
+    restart: always 
+    build: . 
+    ports: 
+      - "4002:3002"
+  
+  
