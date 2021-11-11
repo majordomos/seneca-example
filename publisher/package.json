@@ -5,10 +5,11 @@
         "seneca-balance-client": "^1.2.0",
         "seneca-basic": "^1.0.0",
         "seneca-entity": "^16.0.3",
-        "seneca-web": "^2.2.1"
+        "seneca-web": "^2.2.1",
+        "dotenv": "^10.0.0"
     },
     "scripts": {
         "npm": "npm install",
-        "start": "node s1.js"
+        "start": "node -r dotenv/config app.js"
     }
 }
